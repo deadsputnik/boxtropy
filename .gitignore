@@ -1,3 +1,6 @@
 .env
 node_modules/
 todo.*
+fileStore/container/*.jpg
+fileStore/item/*.jpg
+fileStore/location/*.jpg
