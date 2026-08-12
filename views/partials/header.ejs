@@ -1,0 +1,14 @@
+<h1><a href="/" class="logo"">Boxtropy</a></h1>
+<nav>
+  <ul class="menu">
+    <li><a class="menu-item <%- button === "containers" ? "active":""; %>" href="/Containers">Containers</a></li>
+    <li><a class="menu-item <%- button === "items" ? "active":""; %>" href="/Items">Items</a></li>
+    <li><a class="menu-item <%- button === "locations" ? "active":""; %>" href="/Locations">Locations</a></li>
+    <li><a class="menu-item <%- button === "categories" ? "active":""; %>" href="/Categories">Categories</a></li>
+    <li><a class="menu-item <%- button === "unsorted" ? "active":""; %>" href="/Unsorted">Unsorted</a></li>
+  </ul>
+</nav>
+<form action="/search" method="get" class="search">
+  <input type="text" name="search" placeholder="Search"/>
+  <button type="submit">SEARCH</button>
+</form>

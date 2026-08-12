@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include("./partials/head.ejs", {title: "Add Container- Boxtropy"}); %>
+</head>
+<body>
+<header>
+  <%- include("./partials/header", {button : null}) %>
+</header>
+<main>
+  <div class="scroll">
+    <div class="form-container">
+      <form class="form-style" action="/NewContainer" method="POST">
+        <h1>New container</h1>
+        <div class="form-content">
+          <div class="form-left">
+            <label for="contName">Name:</label>
+            <label for="contLocation">Location:</label>
+            <label for="contContainer">Container:</label>
+            <label for="contNote">Note:</label>
+          </div>           
+          <div class="form-right">
+            <input type="text" name="contName">
+            <select name="contLocation" id="contLocation">
+                <option value="0">No location</option>
+              <% locations.forEach(location => {%>
+                <option value="<%= location.id %>"><%= location.name%></option>
+                <% }) %>
+              </select>        
+              <select name="contContainer">
+                  <option value="null">No container</option>
+                <% containers.forEach(container => {%>
+                  <option value="<%= container.id %>"><%= container.name%></option>
+                  <% }) %>
+                </select>
+                <input type="text" name="contNote" id="contNote">
+              </div>
+            </div>
+            <button class="submit-btn" type="submit">Add Container</button>
+          </form>
+        </div>
+        </div>
+      </main>
+    <footer>
+<%- include("./partials/footer"); %>
+    </footer>    
+</body>
+</html>

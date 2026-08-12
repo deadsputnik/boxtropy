@@ -1,0 +1,9 @@
+<article class="card-div">
+  <div class="card-top">
+    <h2><%= location.name %></h2>
+    <p>Containers: <%= location.count %></p>
+  </div>
+  <a href="/location/<%= location.id%>">
+    <img class="image-L" src="<%=location.photourl%>" alt="container.name" />
+  </a>
+</article>

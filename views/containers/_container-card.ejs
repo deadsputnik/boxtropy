@@ -1,0 +1,28 @@
+<article class="card-div">
+  <div class="card-top">
+    <h2><%= container.name %></h2>
+    <a class="container-location"><%= container.locationname%></a>
+  </div>
+  <a href="/container/<%= container.id %>">
+    <img class="image-L" src="/<%=container.photourl%>" alt="container.name" />
+  </a>
+  <div class="card-bottom">
+    <% if(container.itemcount > 0) { %>
+    <p class="itemCount" title="Number of items inside the container"><%= container.itemcount %></p>
+    <% } %>
+    <h3>Categories</h3>
+    <ul class="container-category-container">    
+      <% container.categories.forEach((category) => { %>
+        <li>
+          <% if(category.id) { %>
+          <a href="/category/<%=category.id%>" class="item-category" style="background-color:<%=category.color%>">
+        <%=category.name%> 
+      </a>
+      <%  }%>
+        </li>
+        <% })%>
+      </ul>
+        <h3>Note</h3>
+        <p><%= container.note %></p>
+      </div>
+</article>

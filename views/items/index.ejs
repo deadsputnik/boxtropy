@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include("./partials/head.ejs", {title: "Items - Boxtropy"}); %>
+</head>
+<body>
+<header> 
+  <%- include("./partials/header", {button: menu}) %>
+</header>
+<main>
+  <div class="scroll">
+<table>
+  <tr>
+    <th>Photo</th>
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>Container</th>
+    <th>Categories</th>
+    <th>Note</th>
+    <th>Last Updated</th>
+    <th>Added on</th>
+    <th>Settings</th>
+  </tr>
+  <% items.forEach((item) => {%>
+    <%- include("./item-row", {item})%>
+  <%}) %>
+</table>
+
+      <!-- <%- include("./items-table", {items: items}) %> -->
+    </div>
+    </main>
+    <footer>
+<%- include("./partials/footer"); %>
+    </footer>    
+</body>
+</html>

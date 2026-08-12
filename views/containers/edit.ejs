@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include("./partials/head.ejs", {title: `Update ${container.name} Container- Boxtropy`}); %>
+</head>
+<body>
+<header>
+  <%- include("./partials/header", {button : null}) %>
+</header>
+<main>
+  <div class="scroll">
+    <div class="form-container">
+      <form class="form-style" action="/UpdateContainer/<%=container.id%>" method="POST">
+        <h1>Update container</h1>
+        <div class="form-content">
+          <div class="form-left">
+            <label for="contName">Name:</label>
+            <label for="contLocation">Location:</label>
+            <label for="contContainer">Container:</label>
+            <label for="contNote">Note:</label>
+          </div>           
+          <div class="form-right">
+            <input type="text" name="contName" value="<%=container.name%>" style="text-transform: capitalize;">
+            <select name="contLocation" id="contLocation">
+                <option value="null" >No location</option>
+              <% existingLocations.forEach(el => {%>
+                <option value="<%= el.id %>" <%= container.location === el.id? "selected": ""%>><%= el.name%></option>
+                <% }) %>
+              </select>        
+              <select name="contContainer" id="contContainer">
+                  <option value="null">No container</option>
+                <% existingContainers.forEach(ec => {%>
+                  <option value="<%= ec.id %>" <%= container.container === ec.id ? "selected" : ""%>><%= ec.name%></option>
+                  <% }) %>
+                </select>
+                <input type="text" name="contNote" id="contNote" value="<%= container.note %>">
+              </div>
+            </div>
+            <button class="submit-btn" type="submit">Update Container</button>
+          </form>
+        </div>
+        </div>
+      </main>
+    <footer>
+<%- include("./partials/footer"); %>
+    </footer>    
+</body>
+</html>

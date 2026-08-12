@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include("./partials/head.ejs", {title: "Items - Boxtropy"}); %>
+</head>
+<body>
+<header> 
+  <%- include("./partials/header", {button: menu}) %>
+</header>
+<main>    
+  <div class="title-bar">
+      <h1><%= title %></h1>
+        <ul class="settings">
+          <li ><a class="settings-btn" href="/UpdateContainer/<%=container.id%>">Update</a></li>
+          <li >
+              <form action="/DeleteContainer" method="POST" >
+                <button class="settings-btn" value="<%=container.id%>" onclick='return confirm("Are you sure you want to delete <%=container.name%> container containing <%=items.length%> items?")' name="containerId"               
+              >Delete</button>
+            </form>
+          </li>
+        </ul>
+        <span class="title-bar-note"><%=container.note%></span>
+    </div>
+  <div class="scroll">
+
+      <% if (items.length > 0) { %>
+      <%-include("./items-table", {items: items})%> 
+      <% } else { %>
+        <span>Nothing in this container...</span>
+      <% } %>
+    </div>
+    </main>
+    <footer>
+<%- include("./partials/footer"); %>
+    </footer>    
+</body>
+</html>

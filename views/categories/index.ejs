@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<%- include("./partials/head.ejs", {title: "Categories - Boxtropy"}); %>
+</head>
+<body>
+<header>
+  <%- include("./partials/header", {button: "categories"}) %>
+</header>
+<main>
+  <div class="scroll">
+    <% categories.forEach((category) => { %>
+      <%- include("./category", {category}) %>
+      <% }) %>
+    </div>
+    </main>
+    <footer>
+<%- include("./partials/footer"); %>
+    </footer>    
+</body>
+</html>

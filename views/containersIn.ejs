@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<%- include("./partials/head.ejs", {title: "Boxtropy"}); %>
+<%- include("./partials/head.ejs", {title: "Containers - Boxtropy"}); %>
 </head>
 <body>
 <header>
-  <%- include("./partials/header", {button: null}) %>
+  <%- include("./partials/header", {button : button}) %>
 </header>
 <main>
+    <div class="title-bar">
+      <h1><%= title %>
+      </h1>
+    </div>
   <div class="scroll">
     <% containers.forEach((container) => { %>
       <%- include("./container-card", {container}) %>

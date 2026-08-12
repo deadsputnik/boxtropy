@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<%- include("./partials/head.ejs", {title: "Boxtropy"}); %>
+<%- include("./partials/head.ejs", {title: "Locations - Boxtropy"}); %>
 </head>
 <body>
 <header>
-  <%- include("./partials/header", {button: null}) %>
+  <%- include("./partials/header", {button: "locations"}) %>
 </header>
 <main>
   <div class="scroll">
-    <% containers.forEach((container) => { %>
-      <%- include("./container-card", {container}) %>
+    <% locations.forEach((location) => { %>
+      <%- include("./location", {location}) %>
       <% }) %>
     </div>
     </main>
